@@ -1,5 +1,9 @@
 "use strict";
 
+// Define breakpoints
+const SCREEN_SMALL = 500;
+const SCREEN_LARGE = 900;
+
 // Initialize Lenis
 const lenis = new Lenis();
 
@@ -16,8 +20,8 @@ document.addEventListener("DOMContentLoaded", function () {
   gsap.ticker.lagSmoothing(0);
 
   const gsapSections = gsap.utils.toArray("section");
-  const isSmallScreen = window.innerWidth < 500;
-  const isLargeScreen = window.innerWidth > 900;
+  const isSmallScreen = window.innerWidth < SCREEN_SMALL;
+  const isLargeScreen = window.innerWidth > SCREEN_LARGE;
 
   gsapSections.forEach((section) => {
     const heading = section.querySelector("h3");
@@ -46,7 +50,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const contactUsBottom = section.querySelector(".contact_us_bottom");
 
     // Hero Section Animations:
-    // if the current section is the hero section, & the screenWidth is > 900, apply the animation based on the current section; else, apply based on each of the current section's child elements.
     if (heading === section.querySelector(".hero_left h3") && subTitle === section.querySelector(".hero_left p")) {
       if (isLargeScreen) {
         const heroTl = tl(section, { start: "15%", end: "+=300" });
@@ -83,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Client Row Animations
     if (clientRow && isSmallScreen) {
-      tl(section, { start: "top top", end: "+=300" }).to(clientRow, { opacity: 0, scale: 0.1, ease: "power1.inOut" });
+      tl(section, { start: "top top", end: "+=300" }).to(clientRow, { opacity: 0, scale: 0.8, ease: "power1.inOut" });
     }
 
     // Service Cards Animations:
@@ -91,17 +94,16 @@ document.addEventListener("DOMContentLoaded", function () {
       serviceCards.forEach((card) => {
         tl(card, { start: "top top", end: "+=300" }).to(card, {
           opacity: 0,
-          translateY: "-100px",
+          translateY: "-50px",
           ease: "expo.inOut",
           stagger: 0.2,
-          duration: 0.5,
-          delay: 0.5,
+          duration: 0.3,
         });
       });
     }
 
     // CTA Section Animations
-    if (ctaIllustration) {
+    if (ctaIllustration && !isSmallScreen) {
       tl(ctaIllustration, { start: "20%" }).to(ctaIllustration, {
         opacity: 0,
         translateX: "100px",
@@ -116,7 +118,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (isLargeScreen) {
           tl(container.parentElement, { start: "20%" }).to(caseStudiesCardContainer, {
             opacity: 0,
-            translateY: "100px",
+            translateY: "50px",
             ease: "expo.in",
             stagger: 0.2,
             delay: 0.1,
@@ -124,10 +126,9 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
           tl(container).to(container, {
             opacity: 0,
-            translateY: "-100px",
+            translateY: "-50px",
             ease: "expo.inOut",
             stagger: 0.2,
-            delay: 0.5,
           });
         }
       });
@@ -138,7 +139,7 @@ document.addEventListener("DOMContentLoaded", function () {
       workProcessBottomBox.forEach((box) => {
         tl(box, { start: "-20%" }).to(box, {
           opacity: 0,
-          translateY: "-100px",
+          translateY: "-50px",
           ease: "expo.inOut",
         });
       });
@@ -148,34 +149,27 @@ document.addEventListener("DOMContentLoaded", function () {
     if (teamMembersBottom && teamMembersCard.length > 0) {
       teamMembersCard.forEach((card, index) => {
         if (isLargeScreen) {
-          // create an array of different animation objects
           const animations = [
-            { translateY: "100px", opacity: 0, ease: "power2.out", duration: 0.5 },
-            { translateX: "100px", opacity: 0, ease: "power2.out", duration: 0.7 },
-            { rotate: 360, scale: 0.5, opacity: 0, ease: "expo.out", duration: 1 },
-            { scale: 1.5, opacity: 0, ease: "expo.inOut", duration: 0.8 },
+            { translateY: "50px", opacity: 0, ease: "power2.out", duration: 0.5 },
+            { translateX: "50px", opacity: 0, ease: "power2.out", duration: 0.5 },
           ];
 
-          // Pick a different animation for each card
           const animation = animations[index % animations.length];
 
           tl(teamMembersBottom, { start: "-70%" }).from(card, animation);
 
-          // animate when leaving the target
           tl(card, { start: "50%" }).to(card, {
             opacity: 0,
-            translateX: "100px",
+            translateX: "50px",
             ease: "ease.out",
             duration: 0.5,
-            delay: 0.3,
           });
         } else {
           tl(card, { start: "20%" }).to(card, {
             opacity: 0,
-            translateY: "-100px",
+            translateY: "-50px",
             ease: "ease.inOut",
-            duration: 0.5,
-            delay: 0.3,
+            duration: 0.3,
           });
         }
       });
@@ -185,7 +179,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (testimonialsBottom) {
       tl(testimonialsBottom, { start: "40%" }).to(testimonialsBottom, {
         opacity: 0,
-        y: -100,
+        y: -50,
         ease: "ease.out",
       });
     }
@@ -194,7 +188,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (contactUsBottom) {
       tl(contactUsBottom, { start: "60%" }).to(contactUsBottom, {
         opacity: 0,
-        y: -100,
+        y: -50,
         ease: "ease.out",
       });
     }

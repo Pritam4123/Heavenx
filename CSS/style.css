@@ -26,7 +26,7 @@ li {
 body {
   font-family: "Space Grotesk", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 400;
+  font-weight: 200;
   font-style: normal;
   padding: 2rem 7rem;
   width: 100%;
@@ -39,6 +39,7 @@ button {
   outline: none;
   cursor: pointer;
   transition: 0.3s ease-in;
+  
 }
 
 input {
@@ -81,7 +82,7 @@ header {
   width: 100%;
   z-index: 1000;
   transition: transform 0.6s ease-in-out;
-  background-color: #0066ff;
+  background-color: #FFFFFF;
 }
 
 .hidden_header {
@@ -2212,3 +2213,42 @@ footer .footer_bottom {
     top: 29.5rem !important;
   }
 }
+
+/* Flexible Layout */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.item {
+  flex: 1 1 100%;
+}
+@media (min-width: 600px) {
+  .item {
+      flex: 1 1 50%;
+  }
+}
+
+/* Relative Units */
+.container {
+  width: 80%;
+  padding: 2em;
+}
+
+/* Responsive Images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+  .sidebar {
+      display: block;
+  }
+}
+@media (max-width: 767px) {
+  .sidebar {
+      display: none;
+  }
+}
+

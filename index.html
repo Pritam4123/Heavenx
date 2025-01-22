@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0 />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="/IMAGES/Group 1.png" type="image/x-icon" />
     <link rel="stylesheet" href="/CSS/style.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -46,7 +46,7 @@
 
           <p>
             Our agency helps businesses grow and succeed online through a range of services including
-            Strtegic marketing, Creative Design, social media marketing, content creation, Technical Solutions, and Aoutomation.
+            Strategic marketing, Creative Design, social media marketing, content creation, Technical Solutions, and Automation.
           </p>
 
           <button class="hero_button">Book a consultation</button>
@@ -471,7 +471,12 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 
-    <script src="/JS/index.js"></script>
-    <script src="/JS/gsap.js"></script>
+      // Close menu when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!menu.contains(e.target) && !hamburger.contains(e.target)) {
+          menu.classList.remove('menu_open');
+        }
+      });
+    </script>
   </body>
 </html>
