@@ -6,14 +6,16 @@
     <link rel="shortcut icon" href="/IMAGES/Group 1.png" type="image/x-icon" />
     <link rel="stylesheet" href="/CSS/style.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
   </head>
   <body>
     <header id="header">
       <div class="logo">
         <a href="/">
-          <img loading="lazy" src="/IMAGES/Group 1.png" alt="Heavenx" />
+          <img loading="lazy" src="/IMAGES/logo.png" alt="Positivus Logo" style="height: 55px; width: 100px;" />
         </a>
       </div>
+
 
       <nav class="nav_list_container">
         <ul id="list">
@@ -26,15 +28,12 @@
           <li class="list_item">
             <a href="#case-studies">use cases</a>
           </li>
-          <li class="list_item">
-            <a href="#contact-us">pricing</a>
-          </li>
-          <li class="list_btn">Request a quote</li>
+            <li class="list_btn" style="background-color: orange; font-weight: bold; color: black;">Request a quote</li>
         </ul>
         <div class="hamburger_menu" id="hamburger_menu">
-          <div class="bar"></div>
-          <div class="bar"></div>
-          <div class="bar"></div>
+          <div class="bar" style="background-color: white;"></div>
+          <div class="bar" style="background-color: white;"></div>
+          <div class="bar" style="background-color: white;"></div>
         </div>
       </nav>
     </header>
@@ -42,18 +41,18 @@
     <main>
       <section class="hero">
         <section class="hero_left">
-          <h3>Your Vision, Our Creation</h3>
+            <h3>Your Vision, Our Creation</h3>
 
-          <p>
+            <p>
             Our agency helps businesses grow and succeed online through a range of services including
             Strategic marketing, Creative Design, social media marketing, content creation, Technical Solutions, and Automation.
-          </p>
+            </p>
 
           <button class="hero_button">Book a consultation</button>
         </section>
 
         <section class="hero_right">
-          <img src="/IMAGES/Illustration.svg" alt="hero illustration" />
+            <img src="/IMAGES/psd.png" alt="hero illustration" style="width: 620px; height: 500px;" />
         </section>
       </section>
 
@@ -398,14 +397,14 @@
 
     <footer>
       <div class="footer_top">
-        <div class="footer_top_logo">
-          <img loading="lazy" src="/IMAGES/Group 1.png" alt="Positivus Logo" />
+        <div class="footer_top_logo</div>">
+            <img loading="lazy" src="/IMAGES/logo.png" alt="Positivus Logo" style="height: 100px; width: 120px;" />
         </div>
-
         <nav class="footer_nav_list_container">
           <ul class="footer_nav_list">
             <li class="footer_nav_list-list_item">
               <a href="#work-process">about us</a>
+              <li class="footer_nav_list-list_item"></li>
             </li>
             <li class="footer_nav_list-list_item">
               <a href="#services">services</a>
@@ -414,16 +413,18 @@
               <a href="#case-studies">use cases</a>
             </li>
             <li class="footer_nav_list-list_item">
-              <a href="#contact-us">pricing</a>
+              <a href="#contact-us">contact us</a>
             </li>
           </ul>
         </nav>
 
-        <div class="footer_social_icons">
-          <img src="/IMAGES/linkedin_logo.svg" alt="LinkedIn icon" loading="lazy" />
+        <!-- <div class="footer_social_icons">
+         </div> <img src="/IMAGES/linkedin_logo.svg" alt="LinkedIn icon" loading="lazy" />
 
           <img src="/IMAGES/facebook_logo.svg" alt="Facebook icon" loading="lazy" />
-        </div>
+
+          <img src="/IMAGES/twitter_logo.svg" alt="X (formerly known as Twitter) icon" loading="lazy" />
+        </div> -->
       </div>
 
       <div class="footer_middle">
@@ -433,11 +434,11 @@
           </div>
 
           <div class="address_wrapper">
-            <span class="email_address">Email: <a href="mailto:Haveenx@gmail.com">Haveenx@gmail.com</a></span>
-            <span class="phone_num">Phone: <a href="tel:6297903249">6297903249</a></span>
+            <span class="email_address">Email: <a href="mailto:info@positivus.com">info@positivus.com</a></span>
+            <span class="phone_num">Phone: <a href="tel:+1-555-567-8901">555-567-8901</a></span>
             <span class="location">
-              <span>Address: 700102 New Twon</span>
-              <span>kolkata, West Bengal</span>
+              <span>Address: 1234 Main St</span>
+              <span>Moonstone City, Stardust State 12345</span>
             </span>
           </div>
         </div>
@@ -454,29 +455,38 @@
           </div>
         </div>
       </div>
-
-      <div class="footer_bottom">
-        <div class="copyright">
-          <p>© <span id="year"></span> Heavenx. All Rights Reserved.</p>
-          <span class="privacy_policy">Privacy Policy</span>
-        </div>
-      </div>
-    </footer>
-
-    <button id="backToTop" title="Go to top">↑ Top</button>
-
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-    <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-
-      // Close menu when clicking outside
-      document.addEventListener('click', (e) => {
-        if (!menu.contains(e.target) && !hamburger.contains(e.target)) {
-          menu.classList.remove('menu_open');
+      <section>
+        <a href="https://wa.me/+916297903249?text=Hello%20Haven%20X,%20I%20would%20like%20to%20know%20more%20about%20your%20services." class="whatsapp_float" target="_blank">
+          <img src="/IMAGES/whatsapp2.webp"  alt="WhatsApp" class="whatsapp-icon">
+        </a>
+      </section>
+      <style>
+        .whatsapp_float {
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          width: 80px;
+          height: 80px;
+          background-color: #25d366;
+          border-radius: 50%;
+          text-align: center;
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+          z-index: 1000; /* Ensure it is in front */
         }
-      });
-    </script>
+        .whatsapp_float img {
+          width: 60%;
+          height: 60%;
+          margin-top: 20%;
+        }
+      </style>
+      </footer></div>
+      <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+      <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  
+      <script src="/JS/index.js"></script>
+      <script src="/JS/gsap.js"></script>
   </body>
 </html>

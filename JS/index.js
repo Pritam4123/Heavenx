@@ -8,7 +8,7 @@ let lastScrollY = window.scrollY;
 const menuIcon = document.querySelector("#hamburger_menu");
 const navListElement = document.querySelector("#list");
 const navLinks = document.querySelectorAll(".list_item a");
-const screenWidth = window.innerWidth;
+// const screenWidth = window.innerWidth; // Removed as it is not needed
 
 // for request/book button click
 const bookConsultBtn = document.querySelector(".hero_button");
@@ -81,6 +81,7 @@ window.addEventListener("resize", function () {
 });
 // check for clicks oustide the navigation area to close menu
 document.addEventListener("click", function (e) {
+  const screenWidth = window.innerWidth;
   if (screenWidth >= 500 && screenWidth <= 1055) {
     if (menuIcon.classList.contains("open")) {
       if (!navListElement.contains(e.target) && e.target !== menuIcon) {
